@@ -379,3 +379,4 @@ ggplot(data = coffee, aes(x = harvested, y = probs.poor)) +
 # Conclusion
 to sum up.
 
+test
