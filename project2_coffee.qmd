@@ -375,6 +375,35 @@ ggplot(data = coffee, aes(x = harvested, y = probs.poor)) +
               se = FALSE) +
   labs(x = "harvested", y = "Probability of quanilityclass being poor")
 ```
+```{r}
+# Package
+library(dplyr)
+library(ggplot2)
+
+# Read dataset
+df <- read.csv("dataset15.csv")
+
+# Ensure harvested are numeric type
+df$harvested <- as.numeric(df$harvested)
+
+# Create a time categorical variable
+df <- df %>%
+  mutate(harvested_period = cut(harvested, 
+                                breaks = c(2000, 2010, 2015, 2020, 2025), 
+                                labels = c("2000-2010", "2011-2015", "2016-2020", "2021-2025"),
+                                right = TRUE))
+
+# Draw harvested_period distribution bar chart
+ggplot(df, aes(x = as.factor(harvested), fill = Qualityclass)) +
+  geom_bar(position = "fill") +  # "fill" Let the bar chart show the proportions
+  scale_fill_manual(values = c("red", "blue")) +  # set colour
+  labs(title = "Proportion of Coffee Quality by Harvest Year",
+       x = "Harvested Year",
+       y = "Proportion",
+       fill = "Quality Class") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
 
 # Conclusion
 to sum up.
