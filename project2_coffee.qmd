@@ -44,7 +44,10 @@ To achieve this, we will employ a Generalized Linear Model to explore the relati
 ## Data Analysis
 ```{r}
 #| echo: true
-data <- read.csv("D:/study/analysis/project2/dataset15.csv")
+data <- read.csv("dataset15.csv")
+```
+
+```{r}
 #remove missing value
 dataset <- data %>%
   drop_na()
@@ -201,6 +204,7 @@ Here @fig-boxplot6, higher-quality batches are more concentrated in harvest year
 levels(coffee$Qualityclass)
 ```
 Note that the baseline category for binary response is 0, which is poor.
+
 ```{r}
 #| echo: true
 # Fit the full model
@@ -450,7 +454,7 @@ ggplot(data = coffee, aes(x = acidity, y = probs.poor)) +
 plot_model(model4, type = "pred", title = "",
            axis.title = c("Country Group", "Probability of Good Quality Coffee"))
 ```
-As @fig-probability1 illustrates the probability of the quality score being classified as good based on aroma grade, it is evident that higher aroma grades correspond to a higher probability of being classified as good quality. Similar interpretations will used for @fig-probability2, @fig-probability3.
+
 ```{r}
 #| echo: true
 #| label: Predicted Effect Plot
