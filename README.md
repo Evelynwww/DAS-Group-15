@@ -3,7 +3,8 @@
 In this section we present the background of the dataset and the variables included. 
 This project is dedicated to analyzing the factors affecting coffee quality. Utilizing data from the Coffee Quality Database (CQD), we aim to investigate how different features of coffee batches contribute to the overall quality classification as either good (score >= 82.5) or poor (score < 82.5).
 
-# Data overviewThe analysis focuses on the following attributes for each coffee batch:
+# Data overview
+The analysis focuses on the following attributes for each coffee batch:
 country_of_origin: The country where the coffee originates.
 
 aroma: Aroma grade of the coffee batch.
