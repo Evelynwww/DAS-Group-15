@@ -299,7 +299,9 @@ vif(stepwise_glm)
 
 model4=stepwise_glm
 ```
+
 In Model 4, countries were categorized into a classification variable based on the number of high-quality and low-quality samples. If a country's number of high-quality samples (q1) is greater than or equal to its number of low-quality samples (q0), it is labeled as "more good"; otherwise, it is labeled as "more poor". In this model, we use "good" as base group, therefore, all variables are highly significant with the model's AIC is 347.9, making it superior to Model 3.
+
 ```{r}
 #| echo: true
 # Likelihood Ratio Test (LRT), used to compare the goodness of fit between two GLM models
@@ -317,6 +319,8 @@ anova(model3, model4)
 #| echo: true
 #| label: tbl-comparison
 #| tbl-cap: Model comparison values for different models
+
+
 Models <- c('model1','model2','model3','model4') 
 model.comp.values.model1 <- glance(model1)
 model.comp.values.model2 <- glance(model2)
@@ -477,4 +481,6 @@ plot_model(model4, type="pred", terms=c("flavor","acidity" ,"country_group" ))
 ```
 
 # Conclusion
-to sum up.
+To sum up, the classification of coffee batches as ‘good’ or ‘poor’ is significantly influenced by various features. A logistic regression model reveals that the probability (p) of a ‘good’ quality score is determined by attributes such as aroma, flavor, acidity, and country of origin.
+While aroma, flavor, and acidity positively impact the probability of a ‘good’ classification, flavor exhibits the strongest positive effect, while country of origin introduces a negative adjustment.
+
