@@ -477,4 +477,6 @@ plot_model(model4, type="pred", terms=c("flavor","acidity" ,"country_group" ))
 ```
 
 # Conclusion
-to sum up.
+To sum up, the classification of coffee batches as ‘good’ or ‘poor’ is significantly influenced by various features. A logistic regression model reveals that the probability (p) of a ‘good’ quality score is determined by attributes such as aroma, flavor, acidity, and country of origin.
+While aroma, flavor, and acidity positively impact the probability of a ‘good’ classification, flavor exhibits the strongest positive effect, while country of origin introduces a negative adjustment.
+
